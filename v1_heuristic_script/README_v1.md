@@ -1,4 +1,4 @@
-# 智能广告预算分配与平滑系统 (Smart Ad Budget Allocation & Pacing System)
+# 智能广告预算分配与平滑系统_v1
 
 ## 1. 项目概览
 
