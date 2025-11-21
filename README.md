@@ -9,8 +9,8 @@
 
 | 版本 | 核心驱动 | 关键技术 | 适用场景 | 文档入口 |
 |------|---------------------|-------------------------|------------------------|------------|
-| **V1: Heuristic Script** | 规则驱动 (Rule-Based) | • 循环加权移动平均<br>• 贪心算法<br>• 复合效率指标 | ✅ 单品类/少活动<br>✅ 数据量小<br>✅ 快速冷启动 | [点击查看 V1 详情](#) |
-| **V2: Advanced Engine** | AI 混合驱动 (Hybrid AI) | • K-Means 聚类（模式识别）<br>• XGBoost 回归（趋势预测）<br>• OOP 分层架构 | ✅ 多品类/全店投放<br>✅ 业务快速扩张期<br>✅ 需捕捉复杂流量趋势 | [点击查看 V2 详情](#) |
+| **V1: Heuristic Script** | 规则驱动 (Rule-Based) | • 循环加权移动平均<br>• 贪心算法<br>• 复合效率指标 | ✅ 单品类/少活动<br>✅ 数据量小<br>✅ 快速冷启动 | [点击查看 V1 详情](#https://github.com/Fayehjf/ad-budget-optimizer/blob/main/v1_heuristic_script/README_v1.md) |
+| **V2: Advanced Engine** | AI 混合驱动 (Hybrid AI) | • K-Means 聚类（模式识别）<br>• XGBoost 回归（趋势预测）<br>• OOP 分层架构 | ✅ 多品类/全店投放<br>✅ 业务快速扩张期<br>✅ 需捕捉复杂流量趋势 | [点击查看 V2 详情](#https://github.com/Fayehjf/ad-budget-optimizer/blob/main/v2_advanced_engine/README_v2.md) |
 
 
 # 🚀 V1: 启发式基础版 (Heuristic Baseline)
