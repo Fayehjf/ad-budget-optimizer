@@ -1,6 +1,6 @@
 # 智能广告预算分配与平滑系统 (Smart Ad Budget Allocation & Pacing System)
 
-## 1. 项目概览 (Project Overview)
+## 1. 项目概览
 
 本项目旨在解决亚马逊广告投放中的两个核心预算管理挑战：
 
@@ -10,23 +10,23 @@
 
 ## 2. 任务一：单个广告活动的小时级平滑分配
 
-### 2.1 核心思路与方法 (Methodology)
+### 2.1 核心思路与方法
 
 为了实现预算的智能平滑分配，我们摒弃了简单的平均分配，采用了基于历史效率的循环加权移动平均算法 (Weighted Circular Moving Average)。
 
-* 复合效率指标 (Composite Metric)：
+* 复合效率指标：
 
     * 单纯依赖 Revenue 会偏向高流量但低效率的时段；单纯依赖 ROAS 会偏向偶然出单的低流量时段。
 
     * 本算法构建了 Efficiency Score = Revenue * log(1 + ROAS)，兼顾了规模与效率。
 
-* 循环平滑 (Circular Smoothing)：
+* 循环平滑：
 
     * 为了防止预算曲线出现剧烈跳变，使用了窗口为 3 的移动平均。
 
     * 创新点：采用了“循环”处理逻辑，将 23:00 与次日 00:00 的数据首尾相连进行平滑，保证了跨午夜时段的预算分配连续性。
 
-### 2.2 结果分析 (Result Analysis)
+### 2.2 结果分析
 
 基于输出结果中 Campaign_A 的数据分析：
 
@@ -42,15 +42,14 @@
 
 ## 3. 任务二：多广告活动预算分配优化
 
-### 3.1 核心思路与方法 (Methodology)
-
+### 3.1 核心思路与方法
 在总预算固定（$100）的约束下，为了实现“最大化总收入”的目标，采用了 基于全局 ROAS 的贪心算法 (Greedy Strategy based on Global ROAS)。
 
 * 优先级排序：计算每个 Campaign 过去 7 天的全局 ROAS，优先满足高 ROAS 活动的预算需求。
 
 * 饱和度封顶：分配金额严格受限于该 Campaign 的单日预算上限，防止过度分配导致无法消耗。
 
-### 3.2 结果分析 (Result Analysis)
+### 3.2 结果分析
 
 基于输出结果，总预算 $100 被精准分配，未出现闲置资金 (unallocated_budget: 0.0)。
 
@@ -74,7 +73,7 @@
 
 * 优胜劣汰：Campaign_F 和 Campaign_D 由于历史表现不佳（ROAS 低于 E），在本次分配周期中被暂停预算支持，从而保护了整体 ROI。
 
-## 4. 结论与展望 (Conclusion & Future Work)
+## 4. 结论与展望
 
 ### 4.1 结论
 
